@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Draft tracker - Project Alan Bird</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="w-100 d-flex pt-5">
+      <div id="seating" class="w-50"></div>
+      <div id="name-input" class="w-50">
+        How many participants:
+        <input id="participant-count" type="number" />
+        <button onClick="calculateSeating()">Generate Seating</button>
+        <hr />
+      </div>
+    </div>
+    <div class="w-100 d-flex pt-5">
+      <div class="p-2 w-50">
+        <button onClick="createPairings()">Create pairings</button>
+        <button onClick="createCommanderPairings()">
+          Create Comander Pairings
+        </button>
+        <button onClick="createCustomPairings()">Create Custom Pairings</button>
+        <button onClick="submitRecords()">Submit Records</button>
+        <div id="pairs-container"></div>
+        <!-- Pairings display and reporting -->
+      </div>
+      <div class="p-2 w-50">
+        <!-- Timer display -->
+        Minutes: <input id="minute-input" type="number" />
+        <button onClick="startTimer()">Start timer</button>
+        <button onClick="stopTimer()">Stop Timer</button>
+        <div id="timer" class="timer"></div>
+      </div>
+      <div id="1-wins"></div>
+      <div id="2-wins"></div>
+      <div id="3-wins"></div>
+      <div id="4-wins"></div>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/participant.js"></script>
+  </body>
+</html>
